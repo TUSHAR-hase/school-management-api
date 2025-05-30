@@ -62,7 +62,8 @@ router.get('/listSchools', async (req, res) => {
 
     res.json(schoolsWithDistance);
   } catch (err) {
-    console.error('Error fetching schools:', err);
+    console.error('Error fetching schools:', err.message);
+
     res.status(500).json({ error: 'Failed to fetch schools' });
   }
 });
